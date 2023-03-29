@@ -12,17 +12,16 @@ const Produto = database.define('Aluno', {
         allownNull: false
     },
     Nota1: {
-        type: Sequelize.INTEGER,
-        allownNull: false
+        type: Sequelize.FLOAT,
     },
-    nota1: {
-        type: Sequelize.INTEGER,
-        allownNull: false
+    Nota2: {
+        type: Sequelize.FLOAT,
     },
-    nota2: {
-        type: Sequelize.INTEGER,
-        allownNull: false
+    Media:{
+        type: Sequelize.FLOAT,
     }
 
 
 })
+
+module.exports = aluno;
