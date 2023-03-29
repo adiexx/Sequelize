@@ -1,11 +1,17 @@
+const sequelize = require('sequelize');
 const Sequelize = require('sequelize');
 const database = require('./db');
 
 const Aluno = database.define('Aluno', {
+    ID: {
+        type: sequelize.STRING,
+        allownNull: true,
+        primaryKey: true
+    },
     CPF: {
         type: Sequelize.INTEGER,
         allownNull: false,
-        primaryKey: true
+
     },
     Nome: {
         type: Sequelize.STRING,
