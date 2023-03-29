@@ -1,25 +1,25 @@
 const prompt = require('prompt-sync')();
 const sequelize = require('./db')
-const aluno = require('./aluno');
+const Aluno = require('./aluno');
 
 async function Listarmedia() {
-  const aluno = await aluno.findAll();
+  const aluno = await Aluno.findAll();
   console.log('Lista da Média deTodos os Alunos:');
-  aluno.forEach((aluno) => {
-    console.log(`${aluno.CPF} ${aluno.Nome}  ${aluno.Nota1} ${aluno.Nota2} ${aluno.Media}`);
+  aluno.forEach((Aluno) => {
+    console.log(`${Aluno.CPF} ${Aluno.Nome}  ${Aluno.Nota1} ${Aluno.Nota2} ${Aluno.Media}`);
   });
 }
 
 async function InserirAluno() {
   const CPF = (parseInt(prompt('Digite o CPF do Aluno: ')));
   const Nome = prompt('Digite o Nome do Aluno: ');
-  const Nota1 = (parseFloar(prompt('Digite o preço do celular: ')));
-  const Nota2 = (parseFloat(prompt('Digite o preço do celular: ')));
+  const Nota1 = (parseFloat(prompt('Digite a nota 1: ')));
+  const Nota2 = (parseFloat(prompt('Digite o nota 2: ')));
   const Media = ((Nota1 + Nota2) / 2);
-  await aluno.create({ CPF, Nome, Nota1, Nota2, Media });
-  console.log('Celular cadastrado com sucesso!');
+  await Aluno.create({ CPF, Nome, Nota1, Nota2, Media });
+  console.log('Aluno cadastrado com sucesso!');
 }
-
+/*
 async function atualizarCelular() {
   const id = parseInt(prompt('Digite o ID do celular a ser atualizado: '));
   const celular = await Celular.findByPk(id);
@@ -44,14 +44,12 @@ async function apagarCelular() {
     console.log('Celular não encontrado!');
   }
 }
-
+*/
 async function main() {
   while (true) {
     console.log('\nSelecione uma opção:');
-    console.log('1 - Listar celulares');
-    console.log('2 - Inserir celular');
-    console.log('3 - Atualizar celular');
-    console.log('4 - Apagar celular');
+    console.log('1 - Listar Alunos');
+    console.log('2 - Inserir Alunos');
     console.log('0 - Sair');
 
     const opcao = parseInt(prompt('Opção selecionada: '));
@@ -64,13 +62,7 @@ async function main() {
         await Listarmedia();
         break;
       case 2:
-        await inserirCelular();
-        break;
-      case 3:
-        await atualizarCelular();
-        break;
-      case 4:
-        await apagarCelular();
+        await InserirAluno();
         break;
       default:
         console.log('Opção inválida!');

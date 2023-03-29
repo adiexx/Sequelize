@@ -1,11 +1,11 @@
 const Sequelize = require('sequelize');
 const database = require('./db');
 
-const Produto = database.define('Aluno', {
+const Aluno = database.define('Aluno', {
     CPF: {
         type: Sequelize.INTEGER,
         allownNull: false,
-        primaryKey: True
+        primaryKey: true
     },
     Nome: {
         type: Sequelize.STRING,
@@ -21,7 +21,6 @@ const Produto = database.define('Aluno', {
         type: Sequelize.FLOAT,
     }
 
-
 })
 
-module.exports = aluno;
+module.exports = Aluno;
