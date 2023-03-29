@@ -5,7 +5,7 @@ const database = require('./db');
 const Aluno = database.define('Aluno', {
     ID: {
         type: sequelize.STRING,
-        allownNull: true,
+        allownNull: false,
         primaryKey: true
     },
     CPF: {
