@@ -28,32 +28,7 @@ async function InserirAlunos() {
   await Aluno.create({ CPF, Nome, Nota1, Nota2, Media });
   console.log('Aluno cadastrado com sucesso!');
 }
-/*
-async function atualizarCelular() {
-  const id = parseInt(prompt('Digite o ID do celular a ser atualizado: '));
-  const celular = await Celular.findByPk(id);
-  if (celular) {
-    const marca = prompt(`Digite a nova marca do celular (${celular.marca}): `) || celular.marca;
-    const modelo = prompt(`Digite o novo modelo do celular (${celular.modelo}): `) || celular.modelo;
-    const preco = parseFloat(prompt(`Digite o novo preço do celular (${celular.preco}): `)) || celular.preco;
-    await celular.update({ marca, modelo, preco });
-    console.log('Celular atualizado com sucesso!');
-  } else {
-    console.log('Celular não encontrado!');
-  }
-}
 
-async function apagarCelular() {
-  const id = parseInt(prompt('Digite o ID do celular a ser apagado: '));
-  const celular = await Celular.findByPk(id);
-  if (celular) {
-    await celular.destroy();
-    console.log('Celular apagado com sucesso!');
-  } else {
-    console.log('Celular não encontrado!');
-  }
-}
-*/
 async function main() {
   while (true) {
     console.log('\nSelecione uma opção:');
