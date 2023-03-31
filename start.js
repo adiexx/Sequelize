@@ -1,5 +1,4 @@
 const prompt = require('prompt-sync')();
-const sequelize = require('./db')
 const Aluno = require('./aluno');
 
 async function ListarAlunos() {
@@ -29,12 +28,14 @@ async function InserirAlunos() {
   console.log('Aluno cadastrado com sucesso!');
 }
 
+
 async function main() {
   while (true) {
     console.log('\nSelecione uma opção:');
     console.log('');
     console.log('1 - Inserir Alunos');
     console.log('2 - Listar Alunos');
+    console.log('3 - Buscar Alunos');
     console.log('0 - Sair');
     console.log('');
 
@@ -51,6 +52,21 @@ async function main() {
         break;
       case 2:
         await ListarAlunos();
+        break;
+      case 3:
+        const opcao1 = require('./submenu');
+  
+        console.log('\nSelecione uma opção:');
+        console.log('');
+        console.log('1 - Busca Por ID');
+        console.log('2 - Busca Por CPF');
+        console.log('3 - Busca Por Nome');
+        console.log('0 - Voltar');
+        console.log('');
+        const op = parseInt(prompt('Opção selecionada: '));
+        const a = await opcao1(op)
+        console.log(a)
+     
         break;
       default:
         console.log('');
