@@ -26,6 +26,19 @@ async function BuscaCPF() {
      
     }
 };
+
+async function BuscaNome() {
+    const nm = prompt('Digite o Nome: ');
+    console.log('');
+    console.log("Buscando...");
+    const nmfind = await Aluno.findAll({where: {Nome: nm});
+    if (nm == null) {
+        console.log('Aluno Não encontrado!');
+      } else{
+        console.log(nmfind);
+     
+    }
+};
   
 
 async function submenubusca(opcao1) {
@@ -44,6 +57,11 @@ async function submenubusca(opcao1) {
         case 2:
          console.log('');
          await BuscaCPF();
+         return '';
+
+        case 3:
+         console.log('');
+         await BuscaNome();
          return '';
 
         default:
