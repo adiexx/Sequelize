@@ -13,6 +13,19 @@ async function BuscaID() {
      
     }
 };
+
+async function BuscaCPF() {
+    const cpf = prompt('Digite o CPF: ');
+    console.log('');
+    console.log("Buscando...");
+    const cpffind = await Aluno.findAll({where: {CPF: cpf});
+    if (cpf == null) {
+        console.log('Aluno Não encontrado!');
+      } else{
+        console.log(cpffind);
+     
+    }
+};
   
 
 async function submenubusca(opcao1) {
@@ -26,6 +39,11 @@ async function submenubusca(opcao1) {
         case 1:
          console.log('');
          await BuscaID();
+         return '';
+
+        case 2:
+         console.log('');
+         await BuscaCPF();
          return '';
 
         default:
