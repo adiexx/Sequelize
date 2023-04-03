@@ -18,7 +18,7 @@ async function BuscaCPF() {
     const cpf = prompt('Digite o CPF: ');
     console.log('');
     console.log("Buscando...");
-    const cpffind = await Aluno.findAll({where: {CPF: cpf});
+    const cpffind = await Aluno.findAll({where: {CPF: cpf}});
     if (cpf == null) {
         console.log('Aluno Não encontrado!');
       } else{
@@ -31,7 +31,7 @@ async function BuscaNome() {
     const nm = prompt('Digite o Nome: ');
     console.log('');
     console.log("Buscando...");
-    const nmfind = await Aluno.findAll({where: {Nome: nm});
+    const nmfind = await Aluno.findAll({where: {Nome: nm}});
     if (nm == null) {
         console.log('Aluno Não encontrado!');
       } else{
