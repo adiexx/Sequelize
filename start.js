@@ -48,12 +48,15 @@ async function main() {
         console.log('');
         process.exit(0);
       case 1:
+        console.clear();
         await InserirAlunos();
         break;
       case 2:
+        console.clear();
         await ListarAlunos();
         break;
       case 3:
+        console.clear();
         const opcao1 = require('./submenu');
   
         console.log('\nSelecione uma opção:');
@@ -69,6 +72,7 @@ async function main() {
      
         break;
       default:
+        console.clear();
         console.log('');
         console.log('Opção inválida!');
         console.log('');

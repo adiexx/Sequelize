@@ -45,26 +45,31 @@ async function submenubusca(opcao1) {
 
     switch (opcao1) {
         case 0:
+          console.clear();
           console.log('');
           console.log('Voltado...');  
         return '';
 
         case 1:
+         console.clear();
          console.log('');
          await BuscaID();
          return '';
 
         case 2:
+         console.clear(); 
          console.log('');
          await BuscaCPF();
          return '';
 
         case 3:
+         console.clear();
          console.log('');
          await BuscaNome();
          return '';
 
         default:
+         console.clear();
          console.log('');
          console.log('Opção inválida!');
          return '';
