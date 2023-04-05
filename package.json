@@ -2,6 +2,7 @@
   "dependencies": {
     "mysql2": "^3.2.0",
     "prompt-sync": "^4.2.0",
-    "sequelize": "^6.30.0"
+    "sequelize": "^6.30.0",
+    "validar-cpf": "^3.0.0"
   }
 }

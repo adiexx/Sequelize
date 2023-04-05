@@ -20,15 +20,14 @@ async function ListarAlunos() {
 
 async function InserirAlunos() {
 
- 
   try {
-    
-    const CPF = prompt('Digite o CPF do Aluno: ');
-    CPF.length
 
-    if (CPF.length !== 11){
+    const validarCpf = require('validar-cpf');
+    const CPF = prompt('Digite o CPF do Aluno: ');
+
+    if (validarCpf(CPF) === false){
       console.log('')
-      throw new Error('Caracteres Insuficientes!')
+      throw new Error('CPF Inválido')
     }
 
     const Nome = prompt('Digite o Nome do Aluno: ');
