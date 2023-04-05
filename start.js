@@ -19,13 +19,21 @@ async function ListarAlunos() {
 }
 
 async function InserirAlunos() {
-  const CPF = prompt('Digite o CPF do Aluno: ');
-  const Nome = prompt('Digite o Nome do Aluno: ');
-  const Nota1 = (parseFloat(prompt('Digite a Nota 1: ')));
 
+ 
   try {
     
- 
+    const CPF = prompt('Digite o CPF do Aluno: ');
+    CPF.length
+
+    if (CPF.length !== 11){
+      console.log('')
+      throw new Error('Caracteres Insuficientes!')
+    }
+
+    const Nome = prompt('Digite o Nome do Aluno: ');
+    const Nota1 = (parseFloat(prompt('Digite a Nota 1: ')));
+  
     if (Nota1 < 0 || Nota1 > 10){
       console.log('')
       throw new Error('Nota inválida!')
