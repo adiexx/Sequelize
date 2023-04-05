@@ -5,39 +5,69 @@ async function BuscaID() {
     const id = (parseInt(prompt('Digite o ID: ')));
     console.log('');
     console.log("Buscando...");
-    const ida = await Aluno.findByPk(id);
-    if (id == null) {
-        console.log('Aluno Não encontrado!');
-      } else{
-        console.log(ida);
-     
+    console.log('');
+   
+
+    try{
+      const ida = await Aluno.findByPk(id);
+      if (ida === null) {
+        throw new Error ('Aluno Não encontrado!')
+  
+        } else{
+          console.log(ida);
+       
+      }
     }
+   catch(error){
+    console.log(error.message)
+   }
 };
 
 async function BuscaCPF() {
     const cpf = prompt('Digite o CPF: ');
     console.log('');
     console.log("Buscando...");
+    console.log('');
+
+    try{
+
     const cpffind = await Aluno.findAll({where: {CPF: cpf}});
-    if (cpf == null) {
-        console.log('Aluno Não encontrado!');
+    if (cpffind === null) {
+      throw new Error ('Aluno Não encontrado!');
+      
       } else{
         console.log(cpffind);
      
     }
+    }
+
+    catch(error){
+      console.log(error.message)
+     }
+    
 };
 
 async function BuscaNome() {
     const nm = prompt('Digite o Nome: ');
     console.log('');
     console.log("Buscando...");
+    console.log('');
     const nmfind = await Aluno.findAll({where: {Nome: nm}});
-    if (nm == null) {
-        console.log('Aluno Não encontrado!');
+
+    try{
+      if (nmfind === null) {
+        throw new Error ('Aluno Não encontrado!');
       } else{
         console.log(nmfind);
      
     }
+
+    }
+
+    catch(error){
+      console.log(error.message)
+     }
+    
 };
   
 
