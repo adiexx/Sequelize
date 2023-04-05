@@ -22,10 +22,32 @@ async function InserirAlunos() {
   const CPF = prompt('Digite o CPF do Aluno: ');
   const Nome = prompt('Digite o Nome do Aluno: ');
   const Nota1 = (parseFloat(prompt('Digite a Nota 1: ')));
-  const Nota2 = (parseFloat(prompt('Digite a Nota 2: ')));
-  const Media = ((Nota1 + Nota2) / 2);
-  await Aluno.create({ CPF, Nome, Nota1, Nota2, Media });
-  console.log('Aluno cadastrado com sucesso!');
+
+  try {
+    
+ 
+    if (Nota1 < 0 || Nota1 > 10){
+      console.log('')
+      throw new Error('Nota inválida!')
+    }
+    
+    const Nota2 = (parseFloat(prompt('Digite a Nota 2: ')));
+  
+    if (Nota2 < 0 || Nota2 > 10){
+      console.log('')
+      throw new Error('Nota inválida!')
+    }
+  
+    const Media = ((Nota1 + Nota2) / 2);
+    await Aluno.create({ CPF, Nome, Nota1, Nota2, Media });
+    console.log('Aluno cadastrado com sucesso!');
+  
+    }
+  
+    catch(error){
+     console.error(error.message)
+    
+  }
 }
 
 
