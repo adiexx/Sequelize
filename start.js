@@ -26,6 +26,7 @@ async function InserirAlunos() {
     const CPF = prompt('Digite o CPF do Aluno: ');
 
     if (validarCpf(CPF) === false){
+      console.clear();
       console.log('')
       throw new Error('CPF Inválido')
     }
@@ -34,6 +35,7 @@ async function InserirAlunos() {
     const Nota1 = (parseFloat(prompt('Digite a Nota 1: ')));
   
     if (Nota1 < 0 || Nota1 > 10){
+      console.clear();
       console.log('')
       throw new Error('Nota inválida!')
     }
@@ -41,6 +43,7 @@ async function InserirAlunos() {
     const Nota2 = (parseFloat(prompt('Digite a Nota 2: ')));
   
     if (Nota2 < 0 || Nota2 > 10){
+      console.clear();
       console.log('')
       throw new Error('Nota inválida!')
     }
