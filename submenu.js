@@ -11,6 +11,7 @@ async function BuscaID() {
     try{
       const ida = await Aluno.findByPk(id);
       if (ida === null) {
+        console.log('');
         throw new Error ('Aluno Não encontrado!')
   
         } else{
@@ -33,6 +34,7 @@ async function BuscaCPF() {
 
     const cpffind = await Aluno.findAll({where: {CPF: cpf}});
     if (cpffind === null) {
+      console.log('');
       throw new Error ('Aluno Não encontrado!');
       
       } else{
@@ -56,6 +58,7 @@ async function BuscaNome() {
 
     try{
       if (nmfind === null) {
+        console.log('');
         throw new Error ('Aluno Não encontrado!');
       } else{
         console.log(nmfind);
