@@ -4,6 +4,8 @@ SET time_zone = "+00:00";
 
 CREATE DATABASE `crud`;
 
+USE crud;
+
 CREATE TABLE `alunos` (
   `ID` int NOT NULL AUTO_INCREMENT,
   `CPF` varchar(11) NOT NULL,
