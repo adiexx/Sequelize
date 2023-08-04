@@ -10,6 +10,7 @@ CREATE TABLE `alunos` (
   `ID` int NOT NULL AUTO_INCREMENT,
   `CPF` varchar(11) NOT NULL,
   `Nome` varchar(255) NOT NULL,
+  `Idade` int(3) NOT NULL,
   `Nota1` decimal(10,1) NOT NULL,
   `Nota2` decimal(10,1) NOT NULL,
   `Media` decimal(10,1) NOT NULL,

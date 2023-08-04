@@ -70,8 +70,38 @@ async function BuscaNome() {
     catch(error){
       console.log(error.message)
      }
+
+     
     
 };
+
+async function BuscaIdade() {
+  const age = prompt('Digite o Nome: ');
+  console.log('');
+  console.log("Buscando...");
+  console.log('');
+  const agefind = await Aluno.findAll({where: {Idade: age}});
+
+  try{
+    if (agefind === null) {
+      console.log('');
+      throw new Error ('Aluno Não encontrado!');
+    } else{
+      console.log(agefind);
+   
+  }
+
+  }
+
+  catch(error){
+    console.log(error.message)
+   }
+
+   
+  
+};
+
+
   
 
 async function submenubusca(opcao1) {
@@ -100,6 +130,12 @@ async function submenubusca(opcao1) {
          console.log('');
          await BuscaNome();
          return '';
+        
+        case 4:
+        console.clear();
+        console.log('');
+        await BuscaIdade();
+        return '';
 
         default:
          console.clear();

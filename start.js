@@ -96,6 +96,7 @@ async function main() {
         console.log('1 - Busca Por ID');
         console.log('2 - Busca Por CPF');
         console.log('3 - Busca Por Nome');
+        console.log('4 - Busca Por Idade');
         console.log('0 - Voltar');
         console.log('');
         const op = parseInt(prompt('Opção selecionada: '));
