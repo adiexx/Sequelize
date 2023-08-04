@@ -1,5 +1,7 @@
 const prompt = require('prompt-sync')();
 const Aluno = require('./aluno');
+const { Op } = require("sequelize");
+
 
 async function BuscaID() {
     const id = (parseInt(prompt('Digite o ID: ')));
@@ -106,19 +108,44 @@ async function menor14() {
   console.log("Buscando...");
   console.log('');
   const agefind = await Aluno.findAll({
-    attributes: {
-        include: [
-            [
-                sequelize.literal(`(
-                    SELECT COUNT(*)
-                    FROM aluno
-                    WHERE
-                    idade < 14
-                )`),
-            ]
-        ]
+    where: {
+      idade: {
+        [Op.lt]: 14
+      }
     }
-});
+  });
+
+  try{
+    if (agefind === null) {
+      console.log('');
+      throw new Error ('Aluno Não encontrado!');
+    } else{
+      console.log(agefind);
+   
+  }
+
+  }
+
+  catch(error){
+    console.log(error.message)
+   }
+
+   
+  
+};
+
+async function entre1418() {
+  console.log('');
+  console.log("Buscando...");
+  console.log('');
+  const agefind = await Aluno.findAll({
+    where: {
+      idade: {
+        [Op.gte]: 14,
+        [Op.lte]: 18
+      }
+    }
+  });
 
   try{
     if (agefind === null) {
@@ -179,6 +206,12 @@ async function submenubusca(opcao1) {
         console.clear();
         console.log('');
         await menor14();
+        return '';
+
+        case 6:
+        console.clear();
+        console.log('');
+        await entre1418();
         return '';
 
         default:
