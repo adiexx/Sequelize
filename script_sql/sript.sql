@@ -20,6 +20,7 @@ CREATE TABLE `alunos` (
 
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+
 insert into alunos (CPF, Nome, Idade, Nota1, Nota2, Media, createdAt, updatedAt) values ('12345678910', 'João', 11, 10, 10, 10, '2021-01-01', '2021-01-01');
 insert into alunos (CPF, Nome, Idade, Nota1, Nota2, Media, createdAt, updatedAt) values ('12345678911', 'Maria', 12, 10, 10, 10, '2021-01-01', '2021-01-01');
 insert into alunos (CPF, Nome, Idade, Nota1, Nota2, Media, createdAt, updatedAt) values ('12345678912', 'José', 13, 10, 10, 10, '2021-01-01', '2021-01-01');

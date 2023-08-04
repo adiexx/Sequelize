@@ -56,7 +56,16 @@ async function BuscaNome() {
     console.log('');
     console.log("Buscando...");
     console.log('');
-    const nmfind = await Aluno.findAll({where: {Nome: nm}});
+    const nmfind = await Aluno.findAll({
+      where: {
+        Nome: {
+          [Op.like]: `%${nm}%`
+        }
+      },
+     attributes: ['ID', 'Nome', 'Idade', 'Nota1', 'Nota2', 'Media'],
+     order: [['Nome', 'ASC']]
+      
+    });
 
     try{
       if (nmfind === null) {
