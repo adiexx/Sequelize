@@ -17,6 +17,10 @@ const Aluno = database.define('Aluno', {
         type: Sequelize.STRING,
         allownNull: false
     },
+    Idade: {
+        type: Sequelize.INTEGER,
+        allownNull: false
+    },
     Nota1: {
         type: Sequelize.FLOAT,
     },

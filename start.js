@@ -10,6 +10,7 @@ async function ListarAlunos() {
   console.log(``);
   console.log(`CPF: ${Aluno.CPF}`);
   console.log(`Nome: ${Aluno.Nome}`);
+  console.log(`Idade: ${Aluno.Idade}`);
   console.log(`Nota 1: ${Aluno.Nota1}`);
   console.log(`Nota 2: ${Aluno.Nota2}`);
   console.log(`Media Final: ${Aluno.Media}`);
@@ -32,6 +33,7 @@ async function InserirAlunos() {
     }
 
     const Nome = prompt('Digite o Nome do Aluno: ');
+    const Idade = (parseInt(prompt('Digite a Idade do Aluno: ')));
     const Nota1 = (parseFloat(prompt('Digite a Nota 1: ')));
   
     if (Nota1 < 0 || Nota1 > 10){
@@ -49,7 +51,7 @@ async function InserirAlunos() {
     }
   
     const Media = ((Nota1 + Nota2) / 2);
-    await Aluno.create({ CPF, Nome, Nota1, Nota2, Media });
+    await Aluno.create({ CPF, Nome, Idade, Nota1, Nota2, Media });
     console.log('Aluno cadastrado com sucesso!');
   
     }

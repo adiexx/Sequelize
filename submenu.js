@@ -76,7 +76,7 @@ async function BuscaNome() {
 };
 
 async function BuscaIdade() {
-  const age = prompt('Digite o Nome: ');
+  const age = prompt('Digite a Idade: ');
   console.log('');
   console.log("Buscando...");
   console.log('');
