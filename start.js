@@ -99,6 +99,8 @@ async function main() {
         console.log('2 - Busca Por CPF');
         console.log('3 - Busca Por Nome');
         console.log('4 - Busca Por Idade');
+        console.log('5 - Busca Menores de 14 anos');
+        console.log('6 - Busca entre 14 e 18 anos');
         console.log('0 - Voltar');
         console.log('');
         const op = parseInt(prompt('Opção selecionada: '));
